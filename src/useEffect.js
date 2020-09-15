@@ -4,7 +4,12 @@ import ReactDOM from 'react-dom';
  * 在函数主题中，不能写具有副作用的逻辑，订阅，定时器修改DOM
  * useEffect给函数组件添加了操作副作用的方法
  * 相当于 DidMount DidUpdate WillUnmount
- * 
+ * 副作用时机 Mount之后
+            Update之后
+            Unmount之前
+   每次渲染都会执行render
+    第一次渲染相当于componentDidMount
+    后面的渲染都相当于componentDidUpdate
  */
 let lastDependencies;
 function useEffect(callback, dependencies) {
